@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="euc-kr" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0, 
+							maximum-scale=1.0, minimum-scale=1.0, 
+							user-scalable=no" />
+<title>모바일 페이지</title>
+</head>
+<body>
+	<form action="#">
+		<!-- 			날짜: <input type="date" min="2011-11-01" max="2021-12-31" step="1" value="2018-11-11"/> <br/>
+			범위: <input type="range" min="0" max="100" step="1" value="50"/> <br/>
+			숫자: <input type="number" min="0" max="100" step="1" value="50"/> <br/>
+			검색: <input type="search"/> <br/>
+			URL: <input type="url" list="url_list"/>	<br/>
+			메일: <input type="email"/> <br/>
+			힌트문자: <input type="text" placeholder="이름을 입력하세요"/> <br/>
+			자동포커스: <input type="text" autofocus/> <br/>
+			빈값검사: <input type="text" required/> <br/>
+			정규표현식: <input type="text" pattern="(010|011)-\d{3,4}-\d{4}"/> <br/>
+			<input type="submit" value="Submit"/>  -->
+		<fieldset>
+			<legend>로그인 정보</legend>
+			<ol>
+				<li><label for='id'>아이디</label><input id='id' name='id'
+					type='text' /></li>
+				<li><label for='pw'>비밀번호</label><input id='pw' name='pw'
+					type='text' /></li>
+				<li><label for='pwconfirm'>비밀번호 확인</label><input id='pwconfirm'
+					name='pwconfirm' type='text' /></li>
+				<li><label for='grade'>회원 등급</label><input type='text'
+					list='countries'></li>
+				<datalist id='countries'>
+					<option>준회원</option>
+					<option>정회원</option>
+					<option>VIP</option>
+				</datalist>
+			</ol>
+		</fieldset>
+		<fieldset>
+			<legend>개인 정보</legend>
+			<ol>
+				<li><label for='name'>이름</label><input id='name' name='name'
+					type='text' placeholder="5자미만 공백없이" /></li>
+				<li><label for='email'>메일 주소</label><input id='email'
+					name='email' type='text' placeholder="abcd@domain.com" /></li>
+				<li><label for='tel'>연락처</label><input id='tel' name='tel'
+					type='text' /></li>
+				<li><label for='birth'>생일</label><input id='birth' name='birth'
+					type='date' min="1990-11-01" max="2021-12-31" step="1"
+					value="연도-월-일" /></li>
+			</ol>
+		</fieldset>
+		<fieldset>
+			<legend>코딩 숙련도(상,중,하)</legend>
+			1. <input type="range" min="0" max="100" step="1" value="50" /> <br />
+		</fieldset>
+		<fieldset>
+			<input type='submit' value='제출' />
+		</fieldset>
+	</form>
+</body>
+</html>

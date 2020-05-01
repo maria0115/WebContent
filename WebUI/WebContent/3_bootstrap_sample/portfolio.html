@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="ko-kr">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> 9PIXELSTUDIO </title>
+
+    <!-- Bootstrap -->
+    <link href="./css/nomalize.css" rel="stylesheet">
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+    <link href="./css/style.css" rel="stylesheet">
+    <link href="./css/animate.css" rel="stylesheet">
+    <link href="./css/jquery.fancybox.css" rel="stylesheet">
+    
+    
+
+    <style>
+        #logo {
+            width: 220px;
+            height: 100px;
+            margin-top: -30px
+        }
+
+        header {
+            background: gray;
+        }
+    </style>
+    
+    <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+ <script>
+ function initialize() {
+
+ /*
+		구글 지도에서 목적지를 찾고 오른쪽 마우스에서 '이곳이 궁금한가요?'에서 좌표값을 구한다
+ */
+ var Y_point = 37.176993; // Y 좌표
+ var X_point = -3.597498; // X 좌표
+ var zoomLevel = 17; // 첫 로딩시 보일 지도의 확대 레벨
+ var markerTitle = "목적지"; // 현재 위치 마커에 마우스를 올렸을때 나타나는 이름
+ var markerMaxWidth = 300; // 마커를 클릭했을때 나타나는 말풍선의 최대 크기
+
+ 
+ var myLatlng = new google.maps.LatLng(Y_point, X_point);
+ var mapOptions = {
+ zoom: zoomLevel,
+ center: myLatlng,
+ mapTypeId: google.maps.MapTypeId.ROADMAP
+ }
+ var map = new google.maps.Map(document.getElementById('map_view'), mapOptions);
+
+ var marker = new google.maps.Marker({
+ position: myLatlng,
+ map: map,
+ title: markerTitle
+ });
+
+ var infowindow = new google.maps.InfoWindow(
+ {
+ content: '여기',
+ maxWidth: markerMaxWidth
+ }
+ );
+
+ google.maps.event.addListener(marker, 'click', function() {
+ infowindow.open(map, marker);
+ });
+ }
+ </script>
+</head>
+
+<body id="home" data-spy="scroll"  data-offset="50"  onload="initialize()">
+    <div class="container-fluid">
+        <div class="container">
+            <nav class="navbar navbar-default navbar-fixed-top" role="navigation" id="navbar-scroll">
+                <div class="container">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-1-collapse">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="index.html"><img id="logo" src="/img/%EB%A1%9C%EA%B3%A0.PNG" alt="9PixelStudio"> </a>
+                    </div>
+
+                    <!-- 네비게이션 메뉴 -->
+                    <div class="collapse navbar-collapse navbar-right navbar-1-collapse">
+                        <ul class="nav navbar-nav">
+                            <li><a href="index.html"> 홈 </a></li>
+                            <!--<li><a href="about.html"> About Us </a></li>-->
+                            <li><a href="portfolio.html"> 오시는 길 </a></li>
+                            <li><a href="contact.html"> 회원가입 </a></li>
+                        </ul>
+                    </div>
+                </div>
+
+            </nav>
+            <!-- /.navbar-collapse -->
+
+
+        </div>
+
+        <div id="portfolio"></div> <!-- 포트폴리오 시작 -->
+        <div class="content1">
+            <header>
+                <div class="container">
+                    <h1><small>오시는 길</small></h1>
+                    <p>동구오빠 문구점으로 오시는 길</p>
+                </div><!-- end .container -->
+            </header>
+        </div>
+
+        <h2 class="sans">How to come</h2>
+        
+            <div id="map_view" style="width:500px; height:300px;"></div>
+        
+
+
+
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="./js/bootstrap.min.js"></script>
+        <script src="./js/bootstrap-hover-dropdown.js"></script>
+        <script src="./js/animatescroll.min.js"></script>
+        <script src="./js/simpleparallax.js"></script>
+        <script src="./js/waypoints.min.js"></script>
+        <script src="./js/jquery.fancybox.js"></script>
+       
+        
+      
+        
+
+</body></html>
